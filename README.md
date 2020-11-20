@@ -3,7 +3,7 @@
 ## Overview
 Simple password manager written in Java/Swing. Gradle is used as the build tool. Current status is work-in-progress.
 
-Project was inspired by more mature password manager: https://github.com/gaborbata/jpass
+Project was inspired by password manager: https://github.com/gaborbata/jpass
 
 ## License
 MIT License
