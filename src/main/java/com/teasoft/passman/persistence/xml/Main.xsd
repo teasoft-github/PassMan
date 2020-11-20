@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <xsd:complexType name="RecordType">
+        <xsd:sequence>
+            <xsd:element name="Name" type="xsd:string"></xsd:element>
+            <xsd:element name="Url" type="xsd:string"></xsd:element>
+            <xsd:element name="UserName" type="xsd:string"></xsd:element>
+            <xsd:element name="Password" type="xsd:string"></xsd:element>
+            <xsd:element name="Notes" type="xsd:string"></xsd:element>
+            <xsd:element name="CreatedDate" type="xsd:string"></xsd:element>
+            <xsd:element name="ModifiedDate" type="xsd:string"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="RecordsType">
+        <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+            <xsd:element name="Record" type="RecordType"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ModelType">
+        <xsd:sequence maxOccurs="1" minOccurs="1">
+            <xsd:element name="Records" type="RecordsType"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="Root">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Model" maxOccurs="1" minOccurs="1" type="ModelType"></xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
